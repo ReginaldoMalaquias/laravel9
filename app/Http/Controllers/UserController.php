@@ -17,4 +17,9 @@ class UserController extends Controller
         $user = User::find($r->id);
         return $user;
     }
+
+    public function insert(Request $r) {
+        $rawData = $r->all();
+        return $rawData;
+    }
 }
