@@ -19,7 +19,8 @@ class UserController extends Controller
     }
 
     public function insert(Request $r) {
-        $rawData = $r->all();
-        return $rawData;
+        $rawData = $r->only('name','email','password');
+        $user = user::create($rawData);
+        return $user;
     }
 }
