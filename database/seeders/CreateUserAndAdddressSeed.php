@@ -29,7 +29,7 @@ class CreateUserAndAdddressSeed extends Seeder
             "address" => "Avenida ACM, 442",
         ]);
 
-        DB::table('invoices')->insert([
+        DB::table('invoices')->createInvoice([
             "description" => "Teste",
             "value" => 35.00,
             "address_id" => 1,

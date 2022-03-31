@@ -33,9 +33,10 @@ Route::post('/addresses', [AddressController::class, 'insert']);
 
 
 // Incluir um novo invoice
-Route::post('/invoices', [InvoiceController::class, 'insert']);
+Route::post('/invoices', [InvoiceController::class, 'createInvoice']);
 
 // Listar invoices
 Route::get('/invoices', [InvoiceController::class, 'index']);
+Route::get('/invoices/{id}', [InvoiceController::class, 'findOne']);
 
 

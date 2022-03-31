@@ -10,15 +10,22 @@ class InvoiceController extends Controller
 {
     //
     public function index() {
-        $invoice = Invoice::all();
-        return $invoice;
+        $invoices = Invoice::all();
+        return $invoices;
     }
 
-    public function insert(Request $r) {
+    public function createInvoice(Request $r) {
        $data = $r->only(['description','value','address_id','user_id']);
        $invoice =  Invoice::create($data);
-       return $invoce;
+       return $invoice;
 
+    }
+
+    public function findOne(Request $r) {
+        $invoice = Invoice::find($r->id);
+        $invoice['user'] = $invoice->user;
+        $invoice['address'] = $invoice->address;
+        return $invoice;
     }
 
      
