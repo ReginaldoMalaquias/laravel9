@@ -13,7 +13,7 @@ class CreateForeignkeyInvoicesUsers extends Migration
      */
     public function up()
     {
-        Schema::table('invoices', function (Blueprint $table) {
+        
             //
             Schema::table('invoices', function (Blueprint $table) {
                 $table->foreign('user_id')
@@ -21,7 +21,7 @@ class CreateForeignkeyInvoicesUsers extends Migration
                 ->on('users')
                 ->onDelete('CASCADE');
             });
-        });
+        
     }
 
     /**
@@ -31,9 +31,9 @@ class CreateForeignkeyInvoicesUsers extends Migration
      */
     public function down()
     {
-        Schema::table('invoices', function (Blueprint $table) {
+        
             //
             $table->dropForeign('users_id');
-        });
+        
     }
 }
