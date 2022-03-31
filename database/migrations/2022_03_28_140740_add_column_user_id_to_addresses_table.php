@@ -13,9 +13,9 @@ class AddColumnAddressIdToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('addresses', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('address_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
 
 
         });
@@ -28,10 +28,10 @@ class AddColumnAddressIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('addresses', function (Blueprint $table) {
             //
             
-            $table->dropColumn('address_id');
+            $table->dropColumn('user_id');
         });
     }
 }
